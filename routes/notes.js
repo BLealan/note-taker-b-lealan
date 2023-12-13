@@ -2,13 +2,13 @@ const notes = require('express').Router();
 const { v4: uuidv4 } = require('uuid');
 const fs = require ('fs');
 
-notes.get('/', (req, res) => {
-    readFromFile('.db/db.json').then((data) => res.json(JSON.parse(data)));
+notes.get('/notes', (req, res) => {
+    readFile('.db/db.json').then((data) => res.json(JSON.parse(data)));
 });
 
 notes.get('/:note_id', (req, res) => {
     const noteID = req.params.note_id;
-    readFromFile('./db/db.json')
+    readFile('./db/db.json')
     .then((data) => JSON.parse(data))
     .then((json) => {
         const result = json.filter((note) => note.note_id === noteId);
@@ -20,7 +20,7 @@ notes.get('/:note_id', (req, res) => {
 
 // notes.delete('/:note_id', (req, res => {
 //     const noteID = req.params.note_id;
-//     readFromFile('./db/db.json')
+//     readFile('./db/db.json')
 //     .then((data) => JSON.parse(data))
 //     .then((json) => {
 //         const result = json.filter((note) => note.note_id !== noteID);
@@ -41,7 +41,7 @@ notes.post('/', (req, res) => {
             note_id:uuidv4(),
         };
 
-        readAndAppend(newNote, './db/db.json');
+        appendFile(newNote, './db/db.json');
         res.json("Note added successfully");
     } else {
         res.errored("Error in creating new note");
