@@ -8,6 +8,7 @@
 - [Tests](#tests)   
 
 ## Installation
+uuidv4
 
 ## Usage
 
