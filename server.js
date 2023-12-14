@@ -1,4 +1,4 @@
-//Import Express.js, path package
+//Import Express.js, path package, contents of index.js
 const express = require('express');
 const path = require('path');
 const api = require('./routes/index.js');
@@ -18,13 +18,12 @@ app.get('*', (req, res) =>
     res.sendFile(path.join(__dirname, './public/index.html'))
 );
 
-//Get notes.html request
+//Get notes.html request when path ends in /notes
 app.get('/notes', (req, res) =>
     res.sendFile(path.join(__dirname, './public/notes.html'))
 );
 
-
-
+//Lets the user know where the server is running from
 app.listen(PORT, () =>
-    console.log(`App listening at  http://localhost:${PORT}`)
+    console.log(`App listening at http://localhost:${PORT}`)
 );
