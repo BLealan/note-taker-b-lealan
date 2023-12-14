@@ -2,9 +2,9 @@
 
 ## Description
 
-This application is for writing, saving and removing notes. 
+This application is for the user to write, save and remove notes. 
 
-The pages are routed depending on their input, and also determines their functionality. By making CURL requests to the local server the user is able to FETCH the existing notes, POST new ones and DELETE old/unnecessary ones.
+The pages are routed depending on their input, and this also determines their functionality. By making CURL requests to the local server the user is able to FETCH the existing notes, POST new ones and DELETE old/unnecessary ones.
 
 Adhering to the concept of modularization and separation of concern, the server.js file pulls requests from the index.js, which, in turn, works with the notes.js for its functionality (wth the scope to add further pages in future, similarly handled within the 'routes' folder).
 
@@ -13,6 +13,12 @@ Within the notes.js is the code for the CURL requests related to the notes gener
 However, while I was able to write the majority of code for the structure of the application, during testing I was not able to debug it to match the acceptance criteria. As such it is something I will work more on and return to! 
 
 ## Installation
-Please ensure that [express](https://www.npmjs.com/package/express) and [uuidv4(https://www.npmjs.com/package/uuidv4)] are downloaded in order to run `node server.js`.
+Please ensure that [express](https://www.npmjs.com/package/express) and [uuidv4](https://www.npmjs.com/package/uuidv4) are downloaded in order to run `node server.js`.
+
+## Usage
+![Screenshot 1](./assets/Screenshot-1.png)
 
 ## Sources
+- https://www.youtube.com/watch?v=pKd0Rpw7O48
+- https://devcenter.heroku.com/articles/getting-started-with-nodejs?singlepage=true#prepare-the-app
+- https://expressjs.com/en/guide/routing.html
